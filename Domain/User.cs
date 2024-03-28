@@ -8,8 +8,6 @@ namespace Domain
     {
         [Key] 
         public int Id { get; set; }
-        public int AccId { get; set; }
-        public Accountant Accountant { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string UserName { get; set; }
@@ -17,8 +15,8 @@ namespace Domain
         public int Salary { get; set; }
         public string Email { get; set; }   
         public string Password { get; set; }
-        
-        public bool IsBlocked = false;
+
+        public bool IsBlocked { get; set; } = false;
         public string Role { get; set; }
         public ICollection<Loan> Loans { get; set; }
 

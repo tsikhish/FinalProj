@@ -17,10 +17,6 @@ namespace Domain.Post
         public string Password { get; set; }
         public string Role { get; set; }
     }
-    public static class Role
-    {
-        public const string Admin = "Admin";
-        public const string User = "User";
-    }
+   
 }
 

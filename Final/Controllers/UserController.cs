@@ -37,6 +37,7 @@ namespace Final.Controllers
             _appsettings = appsettings.Value;
             _userservices = userservices;
         }
+   
         [HttpPost("/user/registration")]
         public async Task<IActionResult> RegisterUser([FromBody] UserRegistration user)
         {
@@ -53,14 +54,12 @@ namespace Final.Controllers
                     }
                     return BadRequest(errorMessage);
                 }
-
                 var existingUser = await _personcontext.Users.FirstOrDefaultAsync(x => x.UserName == user.UserName);
                 if (existingUser != null)
                 {
                     return Conflict($"{existingUser.UserName} already exists");
                 }
                 string hashedPassword = BCrypt.Net.BCrypt.HashPassword(user.Password);
-
                 var newUser = new User
                 {
                     UserName = user.UserName,
@@ -70,17 +69,11 @@ namespace Final.Controllers
                     LastName = user.LastName,
                     Age = user.Age,
                     FirstName = user.FirstName,
-                    Role = user.Role
+                    Role = user.Role,
+                    IsBlocked = false
                 };
-
                 await _personcontext.Users.AddAsync(newUser);
                 await _personcontext.SaveChangesAsync();
-
-                if (newUser.Role != "User")
-                {
-                    return BadRequest($"{newUser.UserName} should be a User");
-                }
-
                 return Ok("User registered successfully");
             }
             catch (Exception ex)
@@ -117,6 +110,7 @@ namespace Final.Controllers
                         LastName = user.LastName,
                         Token = tokenstring,
                         Role = user.Role,
+                        
                     }
                     );
             }
@@ -126,6 +120,7 @@ namespace Final.Controllers
             }
 
         }
+        [Authorize(Roles = Domain.Role.Accountant)]
         [HttpGet("getuser")]
         public async Task<ActionResult<IEnumerable<User>>> GetAllPerson()
         {
@@ -139,6 +134,26 @@ namespace Final.Controllers
                 return Ok(persons);
             }
         }
+        [HttpPut("/userUpdate")]
+        public async Task<ActionResult<IEnumerable<User>>> updateUser(int userId)
+        {
+            var user = await _personcontext.Users.FirstOrDefaultAsync(x => x.Id == userId);
+            if (user == null)
+            {
+                return NotFound();
+            }
+            if (user.IsBlocked)
+            {
+                user.IsBlocked = false;
+            }
+            else 
+            { 
+                 user.IsBlocked= true;
+            }
+             _personcontext.Users.Update(user);
+            await _personcontext.SaveChangesAsync();
+            return Ok(user);
+        }
 
         [Authorize]
         [HttpGet("/{id}")]
@@ -149,20 +164,19 @@ namespace Final.Controllers
             {
                 return Unauthorized();
             }
-
-            if (userId != id)
+            var user = await _personcontext.Users.FirstOrDefaultAsync(x => x.Id == id);
+            if(user == null)
+            {
+                return NotFound();
+            }
+            if (User.IsInRole(Domain.Role.Accountant) || userId==id)
+            {
+                return Ok(user);
+            }
+            else
             {
                 return Forbid();
             }
-
-            var user = await _personcontext.Users.FirstOrDefaultAsync(x => x.Id == id);
-            return Ok(user);
-
         }
-
-
-
-
-
     }
 }

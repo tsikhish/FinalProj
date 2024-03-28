@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Final.Migrations
 {
     [DbContext(typeof(PersonContext))]
-    [Migration("20240327232206_threekeys")]
-    partial class threekeys
+    [Migration("20240328123845_FinalResult")]
+    partial class FinalResult
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -19,30 +19,6 @@ namespace Final.Migrations
                 .UseIdentityColumns()
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "5.0.0");
-
-            modelBuilder.Entity("Domain.Accountant", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .UseIdentityColumn();
-
-                    b.Property<string>("FirstName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("LastName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Role")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Accountant");
-                });
 
             modelBuilder.Entity("Domain.Loan", b =>
                 {
@@ -83,9 +59,6 @@ namespace Final.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
-                    b.Property<int>("AccId")
-                        .HasColumnType("int");
-
                     b.Property<int>("Age")
                         .HasColumnType("int");
 
@@ -94,6 +67,9 @@ namespace Final.Migrations
 
                     b.Property<string>("FirstName")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsBlocked")
+                        .HasColumnType("bit");
 
                     b.Property<string>("LastName")
                         .HasColumnType("nvarchar(max)");
@@ -112,8 +88,6 @@ namespace Final.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AccId");
-
                     b.ToTable("Users");
                 });
 
@@ -126,22 +100,6 @@ namespace Final.Migrations
                         .IsRequired();
 
                     b.Navigation("User");
-                });
-
-            modelBuilder.Entity("Domain.User", b =>
-                {
-                    b.HasOne("Domain.Accountant", "Accountant")
-                        .WithMany("Users")
-                        .HasForeignKey("AccId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Accountant");
-                });
-
-            modelBuilder.Entity("Domain.Accountant", b =>
-                {
-                    b.Navigation("Users");
                 });
 
             modelBuilder.Entity("Domain.User", b =>

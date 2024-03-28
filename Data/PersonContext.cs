@@ -14,7 +14,6 @@ namespace Data
         {
 
         }
-        public DbSet<Accountant> Accountant { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<Loan> Loans { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -23,10 +22,7 @@ namespace Data
            .HasOne(l => l.User)
            .WithMany(x=>x.Loans) 
            .HasForeignKey(l => l.UserId);
-            modelBuilder.Entity<User>()
-                .HasOne(x => x.Accountant)
-                .WithMany(x => x.Users)
-                .HasForeignKey(x => x.AccId);
+            
         }
     }
 

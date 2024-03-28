@@ -16,3 +16,4 @@ C:\Users\Mari\source\repos\Final\Data\obj\Debug\net5.0\ref\Data.dll
 C:\Users\Mari\source\repos\Final\Data\bin\Debug\net5.0\Data.runtimeconfig.json
 C:\Users\Mari\source\repos\Final\Data\bin\Debug\net5.0\Data.runtimeconfig.dev.json
 C:\Users\Mari\source\repos\Final\Data\obj\Debug\net5.0\Data.genruntimeconfig.cache
+C:\Users\Mari\source\repos\Final\Data\obj\Debug\net5.0\Data.sourcelink.json

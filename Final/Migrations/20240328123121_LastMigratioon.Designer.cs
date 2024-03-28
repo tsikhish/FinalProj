@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Final.Migrations
 {
     [DbContext(typeof(PersonContext))]
-    [Migration("20240327193746_Practiseas")]
-    partial class Practiseas
+    [Migration("20240328123121_LastMigratioon")]
+    partial class LastMigratioon
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -19,27 +19,6 @@ namespace Final.Migrations
                 .UseIdentityColumns()
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "5.0.0");
-
-            modelBuilder.Entity("Domain.Accountant", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .UseIdentityColumn();
-
-                    b.Property<string>("FirstName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("LastName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Role")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Accountants");
-                });
 
             modelBuilder.Entity("Domain.Loan", b =>
                 {

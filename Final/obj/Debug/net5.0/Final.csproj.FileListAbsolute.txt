@@ -67,3 +67,4 @@ C:\Users\Mari\source\repos\Final\Final\bin\Debug\net5.0\Humanizer.dll
 C:\Users\Mari\source\repos\Final\Final\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
 C:\Users\Mari\source\repos\Final\Final\bin\Debug\net5.0\BCrypt.Net.dll
 C:\Users\Mari\source\repos\Final\Final\bin\Debug\net5.0\FluentValidation.dll
+C:\Users\Mari\source\repos\Final\Final\obj\Debug\net5.0\Final.sourcelink.json
