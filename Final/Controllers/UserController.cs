@@ -43,37 +43,7 @@ namespace Final.Controllers
         {
             try
             {
-                var validator = new UserRegisterValidation();
-                var validationResult = validator.Validate(user);
-                var errorMessage = "";
-                if (!validationResult.IsValid)
-                {
-                    foreach(var item in validationResult.Errors)
-                    {
-                        errorMessage += item.ErrorMessage + " , ";
-                    }
-                    return BadRequest(errorMessage);
-                }
-                var existingUser = await _personcontext.Users.FirstOrDefaultAsync(x => x.UserName == user.UserName);
-                if (existingUser != null)
-                {
-                    return Conflict($"{existingUser.UserName} already exists");
-                }
-                string hashedPassword = BCrypt.Net.BCrypt.HashPassword(user.Password);
-                var newUser = new User
-                {
-                    UserName = user.UserName,
-                    Email = user.Email,
-                    Password = hashedPassword,
-                    Salary = user.Salary,
-                    LastName = user.LastName,
-                    Age = user.Age,
-                    FirstName = user.FirstName,
-                    Role = user.Role,
-                    IsBlocked = false
-                };
-                await _personcontext.Users.AddAsync(newUser);
-                await _personcontext.SaveChangesAsync();
+                await _userservices.UserRegister(user);
                 return Ok("User registered successfully");
             }
             catch (Exception ex)
@@ -81,21 +51,9 @@ namespace Final.Controllers
                 return BadRequest($"An error occurred: {ex.Message}");
             }
         }
-
         [HttpPost("/user/login")]
         public async Task<IActionResult> Login([FromBody] LoginUser loginModel)
         {
-            var validator = new UserLoginValidation();
-            var valid = validator.Validate(loginModel);
-            var errorMessage = "";
-            if (!valid.IsValid)
-            {
-                foreach (var item in valid.Errors)
-                {
-                    errorMessage += item.ErrorMessage + " , ";
-                }
-                return BadRequest(errorMessage);
-            }
             var tokenstring = await _userservices.LoginUser(loginModel);
             if (tokenstring != null)
             {
@@ -118,7 +76,6 @@ namespace Final.Controllers
             {
                 return Unauthorized("Invalid username or password");
             }
-
         }
         [Authorize(Roles = Domain.Role.Accountant)]
         [HttpGet("getuser")]
@@ -134,25 +91,19 @@ namespace Final.Controllers
                 return Ok(persons);
             }
         }
+        [Authorize(Roles = Domain.Role.Accountant)]
         [HttpPut("/userUpdate")]
         public async Task<ActionResult<IEnumerable<User>>> updateUser(int userId)
         {
-            var user = await _personcontext.Users.FirstOrDefaultAsync(x => x.Id == userId);
-            if (user == null)
+            try
             {
-                return NotFound();
+                var user = await _userservices.UserIsBlocked(userId);
+                return Ok(user);
             }
-            if (user.IsBlocked)
+            catch (Exception ex)
             {
-                user.IsBlocked = false;
+                return BadRequest(ex.Message);
             }
-            else 
-            { 
-                 user.IsBlocked= true;
-            }
-             _personcontext.Users.Update(user);
-            await _personcontext.SaveChangesAsync();
-            return Ok(user);
         }
 
         [Authorize]
