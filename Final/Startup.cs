@@ -18,6 +18,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Final.Services.ILoanService;
 
 namespace Final
 {
@@ -68,7 +69,7 @@ namespace Final
                    };
                });
             services.AddScoped<IUserServices, UserServices>();
-            services.AddScoped<ILoanService,LoanService>();
+            services.AddScoped<ILoanService, LoanService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

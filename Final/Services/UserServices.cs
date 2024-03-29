@@ -24,7 +24,7 @@ namespace Final.Services
     {
         Task<string> LoginUser([FromBody] LoginUser loginUser);
         Task<IEnumerable<User>> GetAll();
-        Task UserRegister([FromBody] UserRegistration userRegistration);
+        Task<User> UserRegister([FromBody] UserRegistration userRegistration);
         Task<ActionResult<User>> UserIsBlocked(int id);
 
     }
@@ -38,7 +38,7 @@ namespace Final.Services
             _appsettings = appsettings.Value;
             _personcontext = personcontext;
         }
-        public async Task UserRegister([FromBody] UserRegistration user)
+        public async Task<User> UserRegister([FromBody] UserRegistration user)
         {
             await ValidateRegistration(user);
             var existingUser = await _personcontext.Users.FirstOrDefaultAsync(x => x.UserName == user.UserName);
@@ -61,6 +61,7 @@ namespace Final.Services
             };
             await _personcontext.Users.AddAsync(newUser);
             await _personcontext.SaveChangesAsync();
+            return newUser;
         }
         public async Task<IEnumerable<User>> GetAll() => await _personcontext.Users.ToListAsync();
         public async Task<string> LoginUser([FromBody] LoginUser loginmodel)

@@ -43,8 +43,8 @@ namespace Final.Controllers
         {
             try
             {
-                await _userservices.UserRegister(user);
-                return Ok("User registered successfully");
+                var newuser = await _userservices.UserRegister(user);
+                return Ok($"{newuser} registered successfully");
             }
             catch (Exception ex)
             {

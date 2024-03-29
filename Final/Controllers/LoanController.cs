@@ -21,13 +21,11 @@ namespace Final.Controllers
     public class LoanController : Controller
     {
         private readonly PersonContext _personcontext;
-        private readonly IUserServices _userServices;
         private readonly ILoanService _loanService;
-        public LoanController(PersonContext personcontext, IUserServices userServices,ILoanService loanService)
+        public LoanController(PersonContext personcontext,ILoanService loanService)
         {
             _personcontext = personcontext;
             _loanService= loanService;
-            _userServices = userServices;
         }
 
         [Authorize(Roles =Role.Accountant)]
