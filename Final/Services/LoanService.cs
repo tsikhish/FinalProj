@@ -22,11 +22,11 @@ namespace Final.Services
             {
                 _personContext = personContext;
             }
-            public async Task AddingLoan(int userId, AddLoans loan)
+           public async Task AddingLoan(int userId, AddLoans loan)
             {
                 await ValidateAddLoan(loan);
                 var user = await _personContext.Users.FirstOrDefaultAsync(x => x.Id == userId);
-                if (user == null)
+                if  (user == null)
                 {
                     throw new Exception($"{user} Not Found");
                 }
@@ -64,7 +64,7 @@ namespace Final.Services
                     await LoansUpdated(loans,updateLoan);
                     loans.Status=updateLoan.Status;
                     _personContext.Update(loans);
-                    await _personContext.SaveChangesAsync();
+                    await _personContext.SaveChangesAsync(); 
                 }
                 else if (idOfUser == userId && loans.Status == LoanStatus.Proccessing)
                 {
