@@ -11,8 +11,6 @@ using Microsoft.Extensions.Options;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Domain.Post;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
-using System;
 namespace TestingFinalProject
 {
     public class IUserController
@@ -26,7 +24,7 @@ namespace TestingFinalProject
                 .UseInMemoryDatabase(databaseName: "FinalResult")
                 .Options;
             var dbContextMock = new Mock<PersonContext>(dbContextOptions);
-            _usercontroller = new UserController(dbContextMock.Object, Mock.Of<IOptions<AppSettings>>(), _repositoryStub.Object);
+            _usercontroller = new UserController(dbContextMock.Object, _repositoryStub.Object);
 
         }
 
@@ -89,7 +87,6 @@ namespace TestingFinalProject
             // Assert
             Assert.IsType<UnauthorizedObjectResult>(result); 
         }
-
         private LoginUser LoginFakeUser()
             {
                 return new LoginUser
@@ -123,7 +120,7 @@ namespace TestingFinalProject
                 Salary = 5000,
                 Email = "tsikhish@gmail.com",
                 Password = "tsikhish",
-                Role ="User",
+                Role = Role.Admin,
                 IsBlocked=false
             };
         }

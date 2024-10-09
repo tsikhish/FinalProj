@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ITtx7P9xmdObi9Vkqp3M6oAa867KCNSCnZnAZtt5B+Z2xjS+AZDnCfdCjn4T9joiXwNhLfsxI9s8+dyaSj8y+Q==",
+  "dgSpecHash": "Uj0MpV6wrkIWt+POdSirxMxH8uQ/fxQgbl+JqZi+gDfFfUER3IrewzZFW6d8rlLmmhn5xbkdbQfI03LV9PoR+g==",
   "success": true,
   "projectFilePath": "C:\\Users\\Mari\\source\\repos\\Final\\Data\\Data.csproj",
   "expectedPackageFiles": [
@@ -37,6 +37,9 @@
     "C:\\Users\\Mari\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\Mari\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\Mari\\.nuget\\packages\\newtonsoft.json\\10.0.1\\newtonsoft.json.10.0.1.nupkg.sha512",
+    "C:\\Users\\Mari\\.nuget\\packages\\nlog\\5.2.8\\nlog.5.2.8.nupkg.sha512",
+    "C:\\Users\\Mari\\.nuget\\packages\\nlog.extensions.logging\\5.3.8\\nlog.extensions.logging.5.3.8.nupkg.sha512",
+    "C:\\Users\\Mari\\.nuget\\packages\\nlog.web.aspnetcore\\5.3.8\\nlog.web.aspnetcore.5.3.8.nupkg.sha512",
     "C:\\Users\\Mari\\.nuget\\packages\\runtime.native.system\\4.3.0\\runtime.native.system.4.3.0.nupkg.sha512",
     "C:\\Users\\Mari\\.nuget\\packages\\swashbuckle.aspnetcore\\5.0.0\\swashbuckle.aspnetcore.5.0.0.nupkg.sha512",
     "C:\\Users\\Mari\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\5.0.0\\swashbuckle.aspnetcore.swagger.5.0.0.nupkg.sha512",

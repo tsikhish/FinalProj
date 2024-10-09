@@ -2,7 +2,7 @@
 
 namespace Final.Migrations
 {
-    public partial class CommSchoolFinal : Migration
+    public partial class UpdateAppUser : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

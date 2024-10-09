@@ -6,21 +6,12 @@ using Microsoft.Extensions.Options;
 using System.Threading.Tasks;
 using System;
 using Domain;
-using Microsoft.AspNetCore.Identity;
 using System.Collections.Generic;
 using System.Security.Claims;
-using Microsoft.IdentityModel.Tokens;
-using System.IdentityModel.Tokens.Jwt;
-using System.Text;
 using Microsoft.AspNetCore.Authorization;
 using Final.Services;
-using Final.Validation;
 using System.Linq;
 using Domain.Post;
-using FluentValidation;
-using static Domain.Loan;
-using static Domain.Post.AddLoans;
-
 namespace Final.Controllers
 {
     [Route("api/[controller]")]
@@ -28,13 +19,11 @@ namespace Final.Controllers
     public class UserController : Controller
     {
         private readonly PersonContext _personcontext;
-        private readonly AppSettings _appsettings;
         private readonly IUserServices _userservices;
 
-        public UserController(PersonContext personcontext, IOptions<AppSettings> appsettings, IUserServices userservices)
+        public UserController(PersonContext personcontext, IUserServices userservices)
         {
             _personcontext = personcontext;
-            _appsettings = appsettings.Value;
             _userservices = userservices;
         }
    
@@ -43,57 +32,68 @@ namespace Final.Controllers
         {
             try
             {
+                if (!ModelState.IsValid)
+                {
+                    return BadRequest(ModelState);
+                }
                 var newuser = await _userservices.UserRegister(user);
-                return Ok($"{newuser} registered successfully");
+
+                return Ok($"{user.UserName} registered successfully");
             }
             catch (Exception ex)
             {
+
                 return BadRequest($"An error occurred: {ex.Message}");
             }
         }
         [HttpPost("/user/login")]
         public async Task<IActionResult> Login([FromBody] LoginUser loginModel)
         {
-            var tokenstring = await _userservices.LoginUser(loginModel);
-            if (tokenstring != null)
+            try
             {
-                var user = await _personcontext.Users.FirstOrDefaultAsync(x => x.UserName == loginModel.UserName);
-                
-                return Ok(
-                    new
-                    {
-                        Id = user.Id,
-                        UserName = user.UserName,
-                        FirstName = user.FirstName,
-                        LastName = user.LastName,
-                        Token = tokenstring,
-                        Role = user.Role,
-                        
-                    }
-                    );
+                if (!ModelState.IsValid)
+                {
+                    return BadRequest(ModelState);
+                }
+                var tokenstring = await _userservices.LoginUser(loginModel);
+                if (tokenstring != null)
+                {
+                    return Ok(tokenstring);
+                }
+                else
+                {
+                    return Unauthorized("Invalid username or password");
+                }
             }
-            else
+            catch(Exception ex) 
             {
-                return Unauthorized("Invalid username or password");
+                return BadRequest($"An error occured: {ex.Message}");
             }
         }
-        [Authorize(Roles = Domain.Role.Accountant)]
+        [Authorize(Roles = "Admin")]
         [HttpGet("getuser")]
         public async Task<ActionResult<IEnumerable<User>>> GetAllPerson()
         {
-            var persons = await _userservices.GetAll();
-            if (!persons.Any())
+            try
             {
-                return NotFound("there are no person");
+                var persons = await _userservices.GetAll();
+                if (!persons.Any())
+                {
+                    return NotFound("there are no person");
+                }
+                else
+                {
+                    return Ok(persons);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                return Ok(persons);
+                return BadRequest($"An error occured: {ex.Message}");
             }
         }
-        [Authorize(Roles = Domain.Role.Accountant)]
+        [Authorize(Roles = "Admin")]
         [HttpPut("/userUpdate")]
-        public async Task<ActionResult<IEnumerable<User>>> updateUser(int userId)
+        public async Task<ActionResult<IEnumerable<User>>> UpdateUser(int userId)
         {
             try
             {
@@ -110,23 +110,30 @@ namespace Final.Controllers
         [HttpGet("/{id}")]
         public async Task<ActionResult<User>> GetUserById(int id)
         {
-            var userIdClaim = HttpContext.User.FindFirst(ClaimTypes.NameIdentifier);
-            if (userIdClaim == null || !int.TryParse(userIdClaim.Value, out int userId))
+            try
             {
-                return Unauthorized();
+                var userIdClaim = HttpContext.User.FindFirst(ClaimTypes.NameIdentifier);
+                if (userIdClaim == null || !int.TryParse(userIdClaim.Value, out int userId))
+                {
+                    return Unauthorized();
+                }
+                var user = await _personcontext.AppUsers.FirstOrDefaultAsync(x => x.Id == id);
+                if (user == null)
+                {
+                    return NotFound();
+                }
+                if (User.IsInRole(nameof(Role.Admin)) || (userId == id))
+                {
+                    return Ok(user);
+                }
+                else
+                {
+                    return Forbid();
+                }
             }
-            var user = await _personcontext.Users.FirstOrDefaultAsync(x => x.Id == id);
-            if(user == null)
+            catch (Exception ex)
             {
-                return NotFound();
-            }
-            if (User.IsInRole(Domain.Role.Accountant) || userId==id)
-            {
-                return Ok(user);
-            }
-            else
-            {
-                return Forbid();
+                return BadRequest($"An error occured: {ex.Message}");
             }
         }
     }
