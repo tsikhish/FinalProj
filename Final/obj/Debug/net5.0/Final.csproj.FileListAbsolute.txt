@@ -57,7 +57,6 @@ C:\Users\Mari\source\repos\Final\Final\obj\Debug\net5.0\staticwebassets\msbuild.
 C:\Users\Mari\source\repos\Final\Final\obj\Debug\net5.0\staticwebassets\msbuild.build.Final.props
 C:\Users\Mari\source\repos\Final\Final\obj\Debug\net5.0\staticwebassets\msbuild.buildMultiTargeting.Final.props
 C:\Users\Mari\source\repos\Final\Final\obj\Debug\net5.0\staticwebassets\msbuild.buildTransitive.Final.props
-C:\Users\Mari\source\repos\Final\Final\obj\Debug\net5.0\Final.csproj.CopyComplete
 C:\Users\Mari\source\repos\Final\Final\obj\Debug\net5.0\Final.dll
 C:\Users\Mari\source\repos\Final\Final\obj\Debug\net5.0\refint\Final.dll
 C:\Users\Mari\source\repos\Final\Final\obj\Debug\net5.0\Final.pdb
@@ -68,3 +67,8 @@ C:\Users\Mari\source\repos\Final\Final\bin\Debug\net5.0\Microsoft.EntityFramewor
 C:\Users\Mari\source\repos\Final\Final\bin\Debug\net5.0\BCrypt.Net.dll
 C:\Users\Mari\source\repos\Final\Final\bin\Debug\net5.0\FluentValidation.dll
 C:\Users\Mari\source\repos\Final\Final\obj\Debug\net5.0\Final.sourcelink.json
+C:\Users\Mari\source\repos\Final\Final\bin\Debug\net5.0\Nlog.config
+C:\Users\Mari\source\repos\Final\Final\bin\Debug\net5.0\NLog.dll
+C:\Users\Mari\source\repos\Final\Final\bin\Debug\net5.0\NLog.Extensions.Logging.dll
+C:\Users\Mari\source\repos\Final\Final\bin\Debug\net5.0\NLog.Web.AspNetCore.dll
+C:\Users\Mari\source\repos\Final\Final\obj\Debug\net5.0\Final.csproj.Up2Date

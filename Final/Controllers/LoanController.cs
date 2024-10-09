@@ -7,12 +7,9 @@ using System.Threading.Tasks;
 using System;
 using Final.Services;
 using Microsoft.EntityFrameworkCore;
-using System.Linq;
 using Microsoft.AspNetCore.Authorization;
 using System.Security.Claims;
 using static Domain.Post.AddLoans;
-using Final.Validation;
-using FluentValidation;
 
 namespace Final.Controllers
 {
@@ -24,11 +21,11 @@ namespace Final.Controllers
         private readonly ILoanService _loanService;
         public LoanController(PersonContext personcontext,ILoanService loanService)
         {
-            _personcontext = personcontext;
+            _personcontext = personcontext; 
             _loanService= loanService;
         }
 
-        [Authorize(Roles =Role.Accountant)]
+        [Authorize(Roles = "Admin")]
         [HttpPost("/addloan")]
         public async Task<ActionResult<Domain.Loan>> AddLoan(int userId, AddLoans loan)
         {
@@ -48,13 +45,12 @@ namespace Final.Controllers
         {
             try
             {
-                await _loanService.ValidateAddLoan(updateLoan);
                 var userIdClaim = HttpContext.User.FindFirst(ClaimTypes.NameIdentifier);
                 if (userIdClaim == null || !int.TryParse(userIdClaim.Value, out int idOfUser))
                 {
                     return Unauthorized();
                 }
-                await _loanService.UpdatingLoan(userId, loanId, updateLoan, idOfUser);
+                await _loanService.UpdatingLoan(HttpContext,userId, loanId, updateLoan, idOfUser);
                 return Ok($"{updateLoan} updated successfully");
             }
             catch (Exception ex)
@@ -77,11 +73,11 @@ namespace Final.Controllers
                     return Forbid(); 
                 }
                 var loan = await _personcontext.Loans.FirstOrDefaultAsync(x => x.Id == loanId);
-                if (loan == null || loan.Status != 0)
+                if (loan == null)
                 {
                     return BadRequest($"{loanId} cant be deleted");
                 }
-                if (User.IsInRole(Role.Accountant) || loan.Status == LoanStatus.Proccessing)
+                if (User.IsInRole("Admin") || loan.Status == LoanStatus.Proccessing)
                 {
                     _personcontext.Loans.Remove(loan);
                     _personcontext.SaveChanges();

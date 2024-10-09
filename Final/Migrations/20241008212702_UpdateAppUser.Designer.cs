@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Final.Migrations
 {
     [DbContext(typeof(PersonContext))]
-    [Migration("20240328123240_CommSchoolFinal")]
-    partial class CommSchoolFinal
+    [Migration("20241008212702_UpdateAppUser")]
+    partial class UpdateAppUser
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -68,14 +68,17 @@ namespace Final.Migrations
                     b.Property<string>("FirstName")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool>("IsBlocked")
+                        .HasColumnType("bit");
+
                     b.Property<string>("LastName")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Password")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Role")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("Role")
+                        .HasColumnType("int");
 
                     b.Property<int>("Salary")
                         .HasColumnType("int");
@@ -85,7 +88,7 @@ namespace Final.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Users");
+                    b.ToTable("AppUsers");
                 });
 
             modelBuilder.Entity("Domain.Loan", b =>
