@@ -3,28 +3,68 @@
   "WorkspaceRootPath": "C:\\Users\\Mari\\source\\repos\\Final\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F849354E-98AB-40A6-9099-5672A5F65C28}|Final\\Final.csproj|c:\\users\\mari\\source\\repos\\final\\final\\controllers\\loancontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F849354E-98AB-40A6-9099-5672A5F65C28}|Final\\Final.csproj|solutionrelative:final\\controllers\\loancontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F849354E-98AB-40A6-9099-5672A5F65C28}|Final\\Final.csproj|c:\\users\\mari\\source\\repos\\final\\final\\services\\userservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F849354E-98AB-40A6-9099-5672A5F65C28}|Final\\Final.csproj|solutionrelative:final\\services\\userservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F849354E-98AB-40A6-9099-5672A5F65C28}|Final\\Final.csproj|c:\\users\\mari\\source\\repos\\final\\final\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F849354E-98AB-40A6-9099-5672A5F65C28}|Final\\Final.csproj|solutionrelative:final\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F849354E-98AB-40A6-9099-5672A5F65C28}|Final\\Final.csproj|c:\\users\\mari\\source\\repos\\final\\final\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F849354E-98AB-40A6-9099-5672A5F65C28}|Final\\Final.csproj|solutionrelative:final\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F849354E-98AB-40A6-9099-5672A5F65C28}|Final\\Final.csproj|c:\\users\\mari\\source\\repos\\final\\final\\controllers\\loancontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F849354E-98AB-40A6-9099-5672A5F65C28}|Final\\Final.csproj|solutionrelative:final\\controllers\\loancontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{27305EB4-58E7-4B79-A4EF-A4A53300B381}|Domain\\Domain.csproj|c:\\users\\mari\\source\\repos\\final\\domain\\post\\addloan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{27305EB4-58E7-4B79-A4EF-A4A53300B381}|Domain\\Domain.csproj|solutionrelative:domain\\post\\addloan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F849354E-98AB-40A6-9099-5672A5F65C28}|Final\\Final.csproj|c:\\users\\mari\\source\\repos\\final\\final\\helper\\errorresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F849354E-98AB-40A6-9099-5672A5F65C28}|Final\\Final.csproj|solutionrelative:final\\helper\\errorresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{27305EB4-58E7-4B79-A4EF-A4A53300B381}|Domain\\Domain.csproj|c:\\users\\mari\\source\\repos\\final\\domain\\loan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{27305EB4-58E7-4B79-A4EF-A4A53300B381}|Domain\\Domain.csproj|solutionrelative:domain\\loan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{27305EB4-58E7-4B79-A4EF-A4A53300B381}|Domain\\Domain.csproj|c:\\users\\mari\\source\\repos\\final\\domain\\post\\addloan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{27305EB4-58E7-4B79-A4EF-A4A53300B381}|Domain\\Domain.csproj|solutionrelative:domain\\post\\addloan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{27305EB4-58E7-4B79-A4EF-A4A53300B381}|Domain\\Domain.csproj|c:\\users\\mari\\source\\repos\\final\\domain\\post\\loginuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{27305EB4-58E7-4B79-A4EF-A4A53300B381}|Domain\\Domain.csproj|solutionrelative:domain\\post\\loginuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{27305EB4-58E7-4B79-A4EF-A4A53300B381}|Domain\\Domain.csproj|c:\\users\\mari\\source\\repos\\final\\domain\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{27305EB4-58E7-4B79-A4EF-A4A53300B381}|Domain\\Domain.csproj|solutionrelative:domain\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{F849354E-98AB-40A6-9099-5672A5F65C28}|Final\\Final.csproj|c:\\users\\mari\\source\\repos\\final\\final\\services\\loanservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F849354E-98AB-40A6-9099-5672A5F65C28}|Final\\Final.csproj|solutionrelative:final\\services\\loanservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{27305EB4-58E7-4B79-A4EF-A4A53300B381}|Domain\\Domain.csproj|c:\\users\\mari\\source\\repos\\final\\domain\\post\\userregistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{27305EB4-58E7-4B79-A4EF-A4A53300B381}|Domain\\Domain.csproj|solutionrelative:domain\\post\\userregistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F849354E-98AB-40A6-9099-5672A5F65C28}|Final\\Final.csproj|c:\\users\\mari\\source\\repos\\final\\final\\final.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{F849354E-98AB-40A6-9099-5672A5F65C28}|Final\\Final.csproj|solutionrelative:final\\final.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{97FB709F-73C0-46DF-89CE-DDC7AF07F53C}|Data\\Data.csproj|c:\\users\\mari\\source\\repos\\final\\data\\personcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{97FB709F-73C0-46DF-89CE-DDC7AF07F53C}|Data\\Data.csproj|solutionrelative:data\\personcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Mari\\source\\repos\\LoanApp\\Domain\\DTO\\RegisterDTO.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Mari\\source\\repos\\LoanApp\\Domain\\CREATE\\RegisterUser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Mari\\source\\repos\\LoanApp\\Domain\\Validations\\PasswordValidation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Mari\\source\\repos\\LoanApp\\LoanApp\\Controllers\\UserRegistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F849354E-98AB-40A6-9099-5672A5F65C28}|Final\\Final.csproj|c:\\users\\mari\\source\\repos\\final\\final\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F849354E-98AB-40A6-9099-5672A5F65C28}|Final\\Final.csproj|solutionrelative:final\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{92699CEB-4745-4DAF-87B9-3EF1163ABEEA}|TestingFinalProject\\TestingFinalProject.csproj|c:\\users\\mari\\source\\repos\\final\\testingfinalproject\\usercontrollertest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -33,26 +73,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{F849354E-98AB-40A6-9099-5672A5F65C28}|Final\\Final.csproj|c:\\users\\mari\\source\\repos\\final\\final\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{F849354E-98AB-40A6-9099-5672A5F65C28}|Final\\Final.csproj|solutionrelative:final\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{27305EB4-58E7-4B79-A4EF-A4A53300B381}|Domain\\Domain.csproj|c:\\users\\mari\\source\\repos\\final\\domain\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{27305EB4-58E7-4B79-A4EF-A4A53300B381}|Domain\\Domain.csproj|solutionrelative:domain\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{27305EB4-58E7-4B79-A4EF-A4A53300B381}|Domain\\Domain.csproj|c:\\users\\mari\\source\\repos\\final\\domain\\post\\userregistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{27305EB4-58E7-4B79-A4EF-A4A53300B381}|Domain\\Domain.csproj|solutionrelative:domain\\post\\userregistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{27305EB4-58E7-4B79-A4EF-A4A53300B381}|Domain\\Domain.csproj|c:\\users\\mari\\source\\repos\\final\\domain\\post\\loginuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{27305EB4-58E7-4B79-A4EF-A4A53300B381}|Domain\\Domain.csproj|solutionrelative:domain\\post\\loginuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F849354E-98AB-40A6-9099-5672A5F65C28}|Final\\Final.csproj|c:\\users\\mari\\source\\repos\\final\\final\\services\\userservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F849354E-98AB-40A6-9099-5672A5F65C28}|Final\\Final.csproj|solutionrelative:final\\services\\userservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{97FB709F-73C0-46DF-89CE-DDC7AF07F53C}|Data\\Data.csproj|c:\\users\\mari\\source\\repos\\final\\data\\personcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{97FB709F-73C0-46DF-89CE-DDC7AF07F53C}|Data\\Data.csproj|solutionrelative:data\\personcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F849354E-98AB-40A6-9099-5672A5F65C28}|Final\\Final.csproj|c:\\users\\mari\\source\\repos\\final\\final\\startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -122,10 +142,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{27305EB4-58E7-4B79-A4EF-A4A53300B381}|Domain\\Domain.csproj|c:\\users\\mari\\source\\repos\\final\\domain\\domain.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{27305EB4-58E7-4B79-A4EF-A4A53300B381}|Domain\\Domain.csproj|solutionrelative:domain\\domain.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F849354E-98AB-40A6-9099-5672A5F65C28}|Final\\Final.csproj|c:\\users\\mari\\source\\repos\\final\\final\\final.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
-      "RelativeMoniker": "D:0:0:{F849354E-98AB-40A6-9099-5672A5F65C28}|Final\\Final.csproj|solutionrelative:final\\final.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -135,110 +151,33 @@
       "DocumentGroups": [
         {
           "DockedWidth": 299,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "WeatherForecastController.cs",
-              "DocumentMoniker": "C:\\Users\\Mari\\source\\repos\\Final\\Final\\Controllers\\WeatherForecastController.cs",
-              "RelativeDocumentMoniker": "Final\\Controllers\\WeatherForecastController.cs",
-              "ToolTip": "C:\\Users\\Mari\\source\\repos\\Final\\Final\\Controllers\\WeatherForecastController.cs",
-              "RelativeToolTip": "Final\\Controllers\\WeatherForecastController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-08T18:04:20.38Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
               "Title": "LoanController.cs",
               "DocumentMoniker": "C:\\Users\\Mari\\source\\repos\\Final\\Final\\Controllers\\LoanController.cs",
               "RelativeDocumentMoniker": "Final\\Controllers\\LoanController.cs",
               "ToolTip": "C:\\Users\\Mari\\source\\repos\\Final\\Final\\Controllers\\LoanController.cs",
               "RelativeToolTip": "Final\\Controllers\\LoanController.cs",
-              "ViewState": "AQIAADsAAAAAAAAAAAAgwEMAAAARAAAA",
+              "ViewState": "AQIAAD0AAAAAAAAAAAAUwEQAAAAnAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-27T01:41:51.687Z",
+              "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "AddLoan.cs",
-              "DocumentMoniker": "C:\\Users\\Mari\\source\\repos\\Final\\Domain\\Post\\AddLoan.cs",
-              "RelativeDocumentMoniker": "Domain\\Post\\AddLoan.cs",
-              "ToolTip": "C:\\Users\\Mari\\source\\repos\\Final\\Domain\\Post\\AddLoan.cs",
-              "RelativeToolTip": "Domain\\Post\\AddLoan.cs",
-              "ViewState": "AQIAAA0AAAAAAAAAAAAuwBQAAAAgAAAA",
+              "Title": "ErrorResponse.cs",
+              "DocumentMoniker": "C:\\Users\\Mari\\source\\repos\\Final\\Final\\helper\\ErrorResponse.cs",
+              "RelativeDocumentMoniker": "Final\\helper\\ErrorResponse.cs",
+              "ToolTip": "C:\\Users\\Mari\\source\\repos\\Final\\Final\\helper\\ErrorResponse.cs",
+              "RelativeToolTip": "Final\\helper\\ErrorResponse.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-28T14:57:53.429Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "User.cs",
-              "DocumentMoniker": "C:\\Users\\Mari\\source\\repos\\Final\\Domain\\User.cs",
-              "RelativeDocumentMoniker": "Domain\\User.cs",
-              "ToolTip": "C:\\Users\\Mari\\source\\repos\\Final\\Domain\\User.cs",
-              "RelativeToolTip": "Domain\\User.cs",
-              "ViewState": "AQIAAAoAAAAAAAAAAAAQwBQAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-22T19:34:43.385Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\Mari\\source\\repos\\Final\\Final\\appsettings.json",
-              "RelativeDocumentMoniker": "Final\\appsettings.json",
-              "ToolTip": "C:\\Users\\Mari\\source\\repos\\Final\\Final\\appsettings.json",
-              "RelativeToolTip": "Final\\appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAEAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-03-22T19:42:20.212Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "UserControllerTest.cs",
-              "DocumentMoniker": "C:\\Users\\Mari\\source\\repos\\Final\\TestingFinalProject\\UserControllerTest.cs",
-              "RelativeDocumentMoniker": "TestingFinalProject\\UserControllerTest.cs",
-              "ToolTip": "C:\\Users\\Mari\\source\\repos\\Final\\TestingFinalProject\\UserControllerTest.cs",
-              "RelativeToolTip": "TestingFinalProject\\UserControllerTest.cs",
-              "ViewState": "AQIAABMAAAAAAAAAAAAAABoAAABGAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-28T21:27:14.577Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "LoanService.cs",
-              "DocumentMoniker": "C:\\Users\\Mari\\source\\repos\\Final\\Final\\Services\\LoanService.cs",
-              "RelativeDocumentMoniker": "Final\\Services\\LoanService.cs",
-              "ToolTip": "C:\\Users\\Mari\\source\\repos\\Final\\Final\\Services\\LoanService.cs",
-              "RelativeToolTip": "Final\\Services\\LoanService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-28T16:59:44.416Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "UserController.cs",
-              "DocumentMoniker": "C:\\Users\\Mari\\source\\repos\\Final\\Final\\Controllers\\UserController.cs",
-              "RelativeDocumentMoniker": "Final\\Controllers\\UserController.cs",
-              "ToolTip": "C:\\Users\\Mari\\source\\repos\\Final\\Final\\Controllers\\UserController.cs",
-              "RelativeToolTip": "Final\\Controllers\\UserController.cs",
-              "ViewState": "AQIAAG8AAAAAAAAAAAAIwIEAAAARAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-22T19:41:30.24Z",
+              "WhenOpened": "2024-10-13T13:40:41.978Z",
               "EditorCaption": ""
             },
             {
@@ -249,27 +188,27 @@
               "RelativeDocumentMoniker": "Domain\\Loan.cs",
               "ToolTip": "C:\\Users\\Mari\\source\\repos\\Final\\Domain\\Loan.cs",
               "RelativeToolTip": "Domain\\Loan.cs",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAmwBgAAAAZAAAA",
+              "ViewState": "AQIAABUAAAAAAAAAAAAqwBgAAAAZAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-22T20:54:24.941Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "UserRegistration.cs",
-              "DocumentMoniker": "C:\\Users\\Mari\\source\\repos\\Final\\Domain\\Post\\UserRegistration.cs",
-              "RelativeDocumentMoniker": "Domain\\Post\\UserRegistration.cs",
-              "ToolTip": "C:\\Users\\Mari\\source\\repos\\Final\\Domain\\Post\\UserRegistration.cs",
-              "RelativeToolTip": "Domain\\Post\\UserRegistration.cs",
-              "ViewState": "AQIAABMAAAAAAAAAAAA5wBoAAAA4AAAA",
+              "DocumentIndex": 1,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\Mari\\source\\repos\\Final\\Final\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "Final\\Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\Mari\\source\\repos\\Final\\Final\\Controllers\\UserController.cs",
+              "RelativeToolTip": "Final\\Controllers\\UserController.cs",
+              "ViewState": "AQIAAB0AAAAAAAAAAAAswCUAAAA+AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-23T15:02:12.665Z",
+              "WhenOpened": "2024-03-22T19:41:30.24Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 6,
               "Title": "LoginUser.cs",
               "DocumentMoniker": "C:\\Users\\Mari\\source\\repos\\Final\\Domain\\Post\\LoginUser.cs",
               "RelativeDocumentMoniker": "Domain\\Post\\LoginUser.cs",
@@ -282,33 +221,185 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 8,
+              "Title": "LoanService.cs",
+              "DocumentMoniker": "C:\\Users\\Mari\\source\\repos\\Final\\Final\\Services\\LoanService.cs",
+              "RelativeDocumentMoniker": "Final\\Services\\LoanService.cs",
+              "ToolTip": "C:\\Users\\Mari\\source\\repos\\Final\\Final\\Services\\LoanService.cs",
+              "RelativeToolTip": "Final\\Services\\LoanService.cs",
+              "ViewState": "AQIAAHsAAAAAAAAAAAAiwIgAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-28T16:59:44.416Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Final",
+              "DocumentMoniker": "C:\\Users\\Mari\\source\\repos\\Final\\Final\\Final.csproj",
+              "RelativeDocumentMoniker": "Final\\Final.csproj",
+              "ToolTip": "C:\\Users\\Mari\\source\\repos\\Final\\Final\\Final.csproj",
+              "RelativeToolTip": "Final\\Final.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-03-22T23:54:51.369Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\Mari\\source\\repos\\Final\\Domain\\User.cs",
+              "RelativeDocumentMoniker": "Domain\\User.cs",
+              "ToolTip": "C:\\Users\\Mari\\source\\repos\\Final\\Domain\\User.cs",
+              "RelativeToolTip": "Domain\\User.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAA9wAwAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-22T19:34:43.385Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AddLoan.cs",
+              "DocumentMoniker": "C:\\Users\\Mari\\source\\repos\\Final\\Domain\\Post\\AddLoan.cs",
+              "RelativeDocumentMoniker": "Domain\\Post\\AddLoan.cs",
+              "ToolTip": "C:\\Users\\Mari\\source\\repos\\Final\\Domain\\Post\\AddLoan.cs",
+              "RelativeToolTip": "Domain\\Post\\AddLoan.cs",
+              "ViewState": "AQIAABoAAAAAAAAAAAAuwCYAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-28T14:57:53.429Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "UserServices.cs",
               "DocumentMoniker": "C:\\Users\\Mari\\source\\repos\\Final\\Final\\Services\\UserServices.cs",
               "RelativeDocumentMoniker": "Final\\Services\\UserServices.cs",
               "ToolTip": "C:\\Users\\Mari\\source\\repos\\Final\\Final\\Services\\UserServices.cs",
               "RelativeToolTip": "Final\\Services\\UserServices.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAFAAAA",
+              "ViewState": "AQIAADcAAAAAAAAAAAAvwEEAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-22T20:18:03.968Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 9,
+              "Title": "UserRegistration.cs",
+              "DocumentMoniker": "C:\\Users\\Mari\\source\\repos\\Final\\Domain\\Post\\UserRegistration.cs",
+              "RelativeDocumentMoniker": "Domain\\Post\\UserRegistration.cs",
+              "ToolTip": "C:\\Users\\Mari\\source\\repos\\Final\\Domain\\Post\\UserRegistration.cs",
+              "RelativeToolTip": "Domain\\Post\\UserRegistration.cs",
+              "ViewState": "AQIAABEAAAAAAAAAAAAgwB0AAAAHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-23T15:02:12.665Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "PersonContext.cs",
               "DocumentMoniker": "C:\\Users\\Mari\\source\\repos\\Final\\Data\\PersonContext.cs",
               "RelativeDocumentMoniker": "Data\\PersonContext.cs",
               "ToolTip": "C:\\Users\\Mari\\source\\repos\\Final\\Data\\PersonContext.cs",
               "RelativeToolTip": "Data\\PersonContext.cs",
-              "ViewState": "AQIAAAgAAAAAAAAAAAAAABkAAAAnAAAA",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAIwA4AAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-22T19:33:49.981Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "WeatherForecastController.cs",
+              "DocumentMoniker": "C:\\Users\\Mari\\source\\repos\\Final\\Final\\Controllers\\WeatherForecastController.cs",
+              "RelativeDocumentMoniker": "Final\\Controllers\\WeatherForecastController.cs",
+              "ToolTip": "C:\\Users\\Mari\\source\\repos\\Final\\Final\\Controllers\\WeatherForecastController.cs",
+              "RelativeToolTip": "Final\\Controllers\\WeatherForecastController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-08T18:04:20.38Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "RegisterDTO.cs",
+              "DocumentMoniker": "C:\\Users\\Mari\\source\\repos\\LoanApp\\Domain\\DTO\\RegisterDTO.cs",
+              "RelativeDocumentMoniker": "..\\LoanApp\\Domain\\DTO\\RegisterDTO.cs",
+              "ToolTip": "C:\\Users\\Mari\\source\\repos\\LoanApp\\Domain\\DTO\\RegisterDTO.cs",
+              "RelativeToolTip": "..\\LoanApp\\Domain\\DTO\\RegisterDTO.cs",
+              "ViewState": "AQIAAAIAAAAAAAAAAAAswBcAAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-12T09:59:03.652Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "UserRegistration.cs",
+              "DocumentMoniker": "C:\\Users\\Mari\\source\\repos\\LoanApp\\LoanApp\\Controllers\\UserRegistration.cs",
+              "RelativeDocumentMoniker": "..\\LoanApp\\LoanApp\\Controllers\\UserRegistration.cs",
+              "ToolTip": "C:\\Users\\Mari\\source\\repos\\LoanApp\\LoanApp\\Controllers\\UserRegistration.cs",
+              "RelativeToolTip": "..\\LoanApp\\LoanApp\\Controllers\\UserRegistration.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-12T09:58:59.775Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "PasswordValidation.cs",
+              "DocumentMoniker": "C:\\Users\\Mari\\source\\repos\\LoanApp\\Domain\\Validations\\PasswordValidation.cs",
+              "RelativeDocumentMoniker": "..\\LoanApp\\Domain\\Validations\\PasswordValidation.cs",
+              "ToolTip": "C:\\Users\\Mari\\source\\repos\\LoanApp\\Domain\\Validations\\PasswordValidation.cs",
+              "RelativeToolTip": "..\\LoanApp\\Domain\\Validations\\PasswordValidation.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-12T09:59:03.519Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 13,
+              "Title": "RegisterUser.cs",
+              "DocumentMoniker": "C:\\Users\\Mari\\source\\repos\\LoanApp\\Domain\\CREATE\\RegisterUser.cs",
+              "RelativeDocumentMoniker": "..\\LoanApp\\Domain\\CREATE\\RegisterUser.cs",
+              "ToolTip": "C:\\Users\\Mari\\source\\repos\\LoanApp\\Domain\\CREATE\\RegisterUser.cs",
+              "RelativeToolTip": "..\\LoanApp\\Domain\\CREATE\\RegisterUser.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-12T09:59:03.592Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Mari\\source\\repos\\Final\\Final\\appsettings.json",
+              "RelativeDocumentMoniker": "Final\\appsettings.json",
+              "ToolTip": "C:\\Users\\Mari\\source\\repos\\Final\\Final\\appsettings.json",
+              "RelativeToolTip": "Final\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-03-22T19:42:20.212Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "UserControllerTest.cs",
+              "DocumentMoniker": "C:\\Users\\Mari\\source\\repos\\Final\\TestingFinalProject\\UserControllerTest.cs",
+              "RelativeDocumentMoniker": "TestingFinalProject\\UserControllerTest.cs",
+              "ToolTip": "C:\\Users\\Mari\\source\\repos\\Final\\TestingFinalProject\\UserControllerTest.cs",
+              "RelativeToolTip": "TestingFinalProject\\UserControllerTest.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAAAABoAAABGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-28T21:27:14.577Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
               "Title": "Startup.cs",
               "DocumentMoniker": "C:\\Users\\Mari\\source\\repos\\Final\\Final\\Startup.cs",
               "RelativeDocumentMoniker": "Final\\Startup.cs",
@@ -316,12 +407,11 @@
               "RelativeToolTip": "Final\\Startup.cs",
               "ViewState": "AQIAAEEAAAAAAAAAAAAgwA4AAAASAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-22T19:42:47.37Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-22T19:42:47.37Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 21,
               "Title": "20241008212155_UpdateAppUsers.cs",
               "DocumentMoniker": "C:\\Users\\Mari\\source\\repos\\Final\\Final\\Migrations\\20241008212155_UpdateAppUsers.cs",
               "RelativeDocumentMoniker": "Final\\Migrations\\20241008212155_UpdateAppUsers.cs",
@@ -329,12 +419,11 @@
               "RelativeToolTip": "Final\\Migrations\\20241008212155_UpdateAppUsers.cs",
               "ViewState": "AQIAADwAAAAAAAAAAAAYwBAAAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-08T21:21:56.388Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-08T21:21:56.388Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 20,
               "Title": "20241008212702_UpdateAppUser.cs",
               "DocumentMoniker": "C:\\Users\\Mari\\source\\repos\\Final\\Final\\Migrations\\20241008212702_UpdateAppUser.cs",
               "RelativeDocumentMoniker": "Final\\Migrations\\20241008212702_UpdateAppUser.cs",
@@ -342,12 +431,11 @@
               "RelativeToolTip": "Final\\Migrations\\20241008212702_UpdateAppUser.cs",
               "ViewState": "AQIAAAcAAAAAAAAAAAAQwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-08T21:27:02.804Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-08T21:27:02.804Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 22,
               "Title": "20241008212007_UpdateRoles.cs",
               "DocumentMoniker": "C:\\Users\\Mari\\source\\repos\\Final\\Final\\Migrations\\20241008212007_UpdateRoles.cs",
               "RelativeDocumentMoniker": "Final\\Migrations\\20241008212007_UpdateRoles.cs",
@@ -355,12 +443,11 @@
               "RelativeToolTip": "Final\\Migrations\\20241008212007_UpdateRoles.cs",
               "ViewState": "AQIAAAMAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-08T21:20:07.672Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-08T21:20:07.672Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 23,
               "Title": "PasswordValidation.cs",
               "DocumentMoniker": "C:\\Users\\Mari\\source\\repos\\Final\\Domain\\Validation\\PasswordValidation.cs",
               "RelativeDocumentMoniker": "Domain\\Validation\\PasswordValidation.cs",
@@ -368,12 +455,11 @@
               "RelativeToolTip": "Domain\\Validation\\PasswordValidation.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAqwAQAAAAjAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-08T17:04:29.145Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-08T17:04:29.145Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 24,
               "Title": "Event.cs",
               "DocumentMoniker": "C:\\Users\\Mari\\source\\repos\\EventBookingApp\\EventBookingApp\\Controllers\\Event.cs",
               "RelativeDocumentMoniker": "..\\EventBookingApp\\EventBookingApp\\Controllers\\Event.cs",
@@ -385,7 +471,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 25,
               "Title": "ApplicationUser.cs",
               "DocumentMoniker": "C:\\Users\\Mari\\source\\repos\\EventBookingApp\\EventBookingApp\\Controllers\\ApplicationUser.cs",
               "RelativeDocumentMoniker": "..\\EventBookingApp\\EventBookingApp\\Controllers\\ApplicationUser.cs",
@@ -397,7 +483,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 26,
               "Title": "LoanControllerTest.cs",
               "DocumentMoniker": "C:\\Users\\Mari\\source\\repos\\Final\\TestingFinalProject\\LoanControllerTest.cs",
               "RelativeDocumentMoniker": "TestingFinalProject\\LoanControllerTest.cs",
@@ -409,7 +495,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 27,
               "Title": "MockClass.cs",
               "DocumentMoniker": "C:\\Users\\Mari\\source\\repos\\TestingWebApi\\Test\\MockClass.cs",
               "RelativeDocumentMoniker": "..\\TestingWebApi\\Test\\MockClass.cs",
@@ -421,7 +507,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 28,
               "Title": "UnitTest1.cs",
               "DocumentMoniker": "C:\\Users\\Mari\\source\\repos\\Final\\TestingFinalProject\\UnitTest1.cs",
               "RelativeDocumentMoniker": "TestingFinalProject\\UnitTest1.cs",
@@ -433,7 +519,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 30,
               "Title": "Nlog.config",
               "DocumentMoniker": "C:\\Users\\Mari\\source\\repos\\Final\\Final\\Nlog.config",
               "RelativeDocumentMoniker": "Final\\Nlog.config",
@@ -445,7 +531,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 29,
               "Title": "Nlog.config",
               "DocumentMoniker": "C:\\Users\\Mari\\source\\repos\\Final\\Final\\Nlog.config",
               "RelativeDocumentMoniker": "Final\\Nlog.config",
@@ -457,7 +543,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 31,
               "Title": "AppSettings.cs",
               "DocumentMoniker": "C:\\Users\\Mari\\source\\repos\\Final\\Final\\helper\\AppSettings.cs",
               "RelativeDocumentMoniker": "Final\\helper\\AppSettings.cs",
@@ -469,7 +555,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 32,
               "Title": "TestingFinalProject.csproj",
               "DocumentMoniker": "C:\\Users\\Mari\\source\\repos\\Final\\TestingFinalProject\\TestingFinalProject.csproj",
               "RelativeDocumentMoniker": "TestingFinalProject\\TestingFinalProject.csproj",
@@ -481,7 +567,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 33,
               "Title": "Final.csproj",
               "DocumentMoniker": "C:\\Users\\Mari\\source\\repos\\Final\\Final\\Final.csproj",
               "RelativeDocumentMoniker": "Final\\Final.csproj",
@@ -493,7 +579,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 34,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Mari\\source\\repos\\Final\\Final\\Program.cs",
               "RelativeDocumentMoniker": "Final\\Program.cs",
@@ -505,7 +591,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 35,
               "Title": "Data.csproj",
               "DocumentMoniker": "C:\\Users\\Mari\\source\\repos\\Final\\Data\\Data.csproj",
               "RelativeDocumentMoniker": "Data\\Data.csproj",
@@ -517,7 +603,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 36,
               "Title": "Domain.csproj",
               "DocumentMoniker": "C:\\Users\\Mari\\source\\repos\\Final\\Domain\\Domain.csproj",
               "RelativeDocumentMoniker": "Domain\\Domain.csproj",
@@ -526,17 +612,6 @@
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
               "WhenOpened": "2024-03-23T17:23:21.288Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 31,
-              "Title": "Final",
-              "DocumentMoniker": "C:\\Users\\Mari\\source\\repos\\Final\\Final\\Final.csproj",
-              "RelativeDocumentMoniker": "Final\\Final.csproj",
-              "ToolTip": "C:\\Users\\Mari\\source\\repos\\Final\\Final\\Final.csproj",
-              "RelativeToolTip": "Final\\Final.csproj",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-03-22T23:54:51.369Z"
             }
           ]
         }

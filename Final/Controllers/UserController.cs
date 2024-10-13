@@ -1,8 +1,6 @@
 ﻿using Data;
-using Final.helper;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Options;
 using System.Threading.Tasks;
 using System;
 using Domain;
@@ -12,6 +10,7 @@ using Microsoft.AspNetCore.Authorization;
 using Final.Services;
 using System.Linq;
 using Domain.Post;
+using Final.helper;
 namespace Final.Controllers
 {
     [Route("api/[controller]")]
@@ -26,8 +25,8 @@ namespace Final.Controllers
             _personcontext = personcontext;
             _userservices = userservices;
         }
-   
-        [HttpPost("/user/registration")]
+
+        [HttpPost("Registration")]
         public async Task<IActionResult> RegisterUser([FromBody] UserRegistration user)
         {
             try
@@ -42,9 +41,14 @@ namespace Final.Controllers
             }
             catch (Exception ex)
             {
-
-                return BadRequest($"An error occurred: {ex.Message}");
+                var errorResponse = new ErrorResponse
+                {
+                    Message = "An error occurred while processing your request.",
+                    Detail = ex.Message
+                };
+                return BadRequest(errorResponse);
             }
+
         }
         [HttpPost("/user/login")]
         public async Task<IActionResult> Login([FromBody] LoginUser loginModel)
@@ -65,12 +69,18 @@ namespace Final.Controllers
                     return Unauthorized("Invalid username or password");
                 }
             }
-            catch(Exception ex) 
+            catch (Exception ex)
             {
-                return BadRequest($"An error occured: {ex.Message}");
+                var errorResponse = new ErrorResponse
+                {
+                    Message = "An error occurred while processing your request.",
+                    Detail = ex.Message
+                };
+                return BadRequest(errorResponse);
             }
+
         }
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = nameof(Role.Admin))]
         [HttpGet("getuser")]
         public async Task<ActionResult<IEnumerable<User>>> GetAllPerson()
         {
@@ -88,10 +98,16 @@ namespace Final.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest($"An error occured: {ex.Message}");
+                var errorResponse = new ErrorResponse
+                {
+                    Message = "An error occurred while processing your request.",
+                    Detail = ex.Message
+                };
+                return BadRequest(errorResponse);
             }
+
         }
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = nameof(Role.Admin))]
         [HttpPut("/userUpdate")]
         public async Task<ActionResult<IEnumerable<User>>> UpdateUser(int userId)
         {
@@ -133,8 +149,14 @@ namespace Final.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest($"An error occured: {ex.Message}");
+                var errorResponse = new ErrorResponse
+                {
+                    Message = "An error occurred while processing your request.",
+                    Detail = ex.Message
+                };
+                return BadRequest(errorResponse);
             }
+
         }
     }
 }
