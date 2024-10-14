@@ -12,6 +12,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using NLog.Extensions.Logging;
+using System;
 using System.Text;
 using static Final.Services.ILoanService;
 
@@ -19,9 +20,12 @@ namespace Final
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        private readonly IWebHostEnvironment _env;
+
+        public Startup(IConfiguration configuration, IWebHostEnvironment env)
         {
             Configuration = configuration;
+            _env = env;
         }
 
         public IConfiguration Configuration { get; }
@@ -30,10 +34,17 @@ namespace Final
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<PersonContext>(opt =>
-                         opt.UseSqlServer(Configuration.GetConnectionString("Final"),
-                         b => b.MigrationsAssembly("Final"))
-                         .EnableSensitiveDataLogging()
-                         .UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking));
+            {
+                opt.UseSqlServer(Configuration.GetConnectionString("Final"),
+                                 b => b.MigrationsAssembly("Final"));
+
+                if (_env.IsDevelopment())
+                {
+                    opt.EnableSensitiveDataLogging(); 
+                }
+
+                opt.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
+            });
 
             services.AddControllers();
             services.AddCors();
@@ -91,8 +102,10 @@ namespace Final
         }
         public void ConfigureLogging(ILoggingBuilder logging)
         {
-            logging.ClearProviders(); 
-            logging.SetMinimumLevel(LogLevel.Trace); 
+            logging.ClearProviders();
+            logging.SetMinimumLevel(LogLevel.Trace);
+            logging.AddConsole();
+            logging.AddDebug();
             logging.AddNLog();
         }
     }

@@ -10,6 +10,10 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authorization;
 using System.Security.Claims;
 using static Domain.Post.AddLoans;
+using Microsoft.AspNetCore.Http;
+using Final.helper;
+using Microsoft.Extensions.Logging;
+using System.ComponentModel;
 
 namespace Final.Controllers
 {
@@ -19,75 +23,93 @@ namespace Final.Controllers
     {
         private readonly PersonContext _personcontext;
         private readonly ILoanService _loanService;
-        public LoanController(PersonContext personcontext,ILoanService loanService)
+        private readonly ILogger _logger;
+        public LoanController(PersonContext personcontext,ILoanService loanService,ILogger<LoanController> logger)
         {
             _personcontext = personcontext; 
             _loanService= loanService;
+            _logger = logger;
         }
 
         [Authorize(Roles = "Admin")]
-        [HttpPost("/addloan")]
+        [HttpPost("addloan")]
         public async Task<ActionResult<Domain.Loan>> AddLoan(int userId, AddLoans loan)
         {
             try
             {
+                _logger.LogDebug($"Starting Addloan method");
                 await _loanService.AddingLoan(userId, loan);
+                _logger.LogInformation("Loan {LoanId} was added for user {UserId}", loan, userId);
                 return Ok("Added loan successfully");
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                _logger.LogError(ex, $"An error occurred during user update.");
+                var errorResponse = new ErrorResponse
+                {
+                    Message = "An error occurred while processing your request.",
+                    Detail = ex.Message
+                };
+                return BadRequest(errorResponse);
             }
+
         }
         [Authorize]
-        [HttpPut("/updateloan")]
+        [HttpPut("updateloan")]
         public async Task<ActionResult<IEnumerable<Loan>>> UpdateLoanByUserId(int userId,int loanId, AddLoans updateLoan)
         {
             try
             {
+                _logger.LogDebug("Starting UpdateLoanByUserId method");
                 var userIdClaim = HttpContext.User.FindFirst(ClaimTypes.NameIdentifier);
                 if (userIdClaim == null || !int.TryParse(userIdClaim.Value, out int idOfUser))
                 {
+                    _logger.LogWarning("Unauthorized");
                     return Unauthorized();
                 }
                 await _loanService.UpdatingLoan(HttpContext,userId, loanId, updateLoan, idOfUser);
+                _logger.LogDebug("Finished UpdateLoanByUserId method.");
                 return Ok($"{updateLoan} updated successfully");
             }
             catch (Exception ex)
             {
-                return StatusCode(500, $"An error occurred while updating loan: {ex.Message}");
+                _logger.LogError(ex, $"An error occurred during user update.");
+                var errorResponse = new ErrorResponse
+                {
+                    Message = "An error occurred while processing your request.",
+                    Detail = ex.Message
+                };
+                return BadRequest(errorResponse);
             }
+
         }
-        [HttpDelete("/deleteloan")]
-        public async Task<ActionResult<IEnumerable<User>>> DeleteLoanByUserId(int userId,int loanId)
+        [Authorize(Roles = nameof(Role.Admin))]
+        [HttpDelete("deleteloan")]
+        public async Task<ActionResult<IEnumerable<User>>> DeleteLoanByUserId(int loanId)
         {
             try
             {
-                var userIdClaim = HttpContext.User.FindFirst(ClaimTypes.NameIdentifier);
-                if (userIdClaim == null || !int.TryParse(userIdClaim.Value, out int IdOfUser))
+                _logger.LogDebug("Started DeleteLoanByUserId method.");
+                if (_personcontext.Loans.FirstOrDefaultAsync(x => x.Id == loanId) == null)
                 {
-                    return Unauthorized();
+                    _logger.LogWarning("Loan not found");
+                    return Unauthorized($"{loanId} doesnt exists");
+
                 }
-                if (IdOfUser != userId)
-                {
-                    return Forbid(); 
-                }
-                var loan = await _personcontext.Loans.FirstOrDefaultAsync(x => x.Id == loanId);
-                if (loan == null)
-                {
-                    return BadRequest($"{loanId} cant be deleted");
-                }
-                if (User.IsInRole("Admin") || loan.Status == LoanStatus.Proccessing)
-                {
-                    _personcontext.Loans.Remove(loan);
-                    _personcontext.SaveChanges();
-                }
-                return Ok($"{loan} successfully been deleted");
+                _logger.LogDebug("Finished DeleteLoanByUserId method.");
+                return Ok($"{loanId} successfully been deleted");
             }
             catch (Exception ex)
             {
-                return StatusCode(500, $"An error occurred while deleting user: {ex.Message}");
+                _logger.LogError(ex, $"An error occurred during user update.");
+                var errorResponse = new ErrorResponse
+                {
+                    Message = "An error occurred while processing your request.",
+                    Detail = ex.Message
+                };
+                return BadRequest(errorResponse);
             }
+
         }
 
     }
