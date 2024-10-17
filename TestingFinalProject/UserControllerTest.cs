@@ -11,30 +11,34 @@ using Microsoft.Extensions.Options;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Domain.Post;
+using Microsoft.Extensions.Logging;
 namespace TestingFinalProject
 {
     public class IUserController
     {
         private readonly Mock<IUserServices> _repositoryStub;
-        private readonly UserController _usercontroller;
+        private readonly UserController _userController;
+        private readonly Mock<ILogger<UserController>> _loggerMock;
+        private readonly DbContextOptions<PersonContext> _dbContextOptions;
         public IUserController()
         {
             _repositoryStub = new Mock<IUserServices>();
-            var dbContextOptions = new DbContextOptionsBuilder<PersonContext>()
+            _dbContextOptions = new DbContextOptionsBuilder<PersonContext>()
                 .UseInMemoryDatabase(databaseName: "FinalResult")
                 .Options;
-            var dbContextMock = new Mock<PersonContext>(dbContextOptions);
-            _usercontroller = new UserController(dbContextMock.Object, _repositoryStub.Object);
+            var dbContextMock = new PersonContext(_dbContextOptions);
 
+            _loggerMock = new Mock<ILogger<UserController>>();
+            _userController = new UserController(dbContextMock, _repositoryStub.Object, _loggerMock.Object);
         }
 
         [Fact]
         public void GetAllPerson_whenPersonDoesntExist_ReturnsNotFound()
-        {   
+        {
             // Arrange
             _repositoryStub.Setup(x => x.GetAll()).ReturnsAsync(new List<User>());
             // Act
-            var result = _usercontroller.GetAllPerson().Result;
+            var result = _userController.GetAllPerson().Result;
             // Assert
             var notFoundResult = Assert.IsType<NotFoundObjectResult>(result.Result);
             Assert.Equal("there are no person", notFoundResult.Value);
@@ -46,9 +50,9 @@ namespace TestingFinalProject
             _repositoryStub.Setup(x => x.GetAll()).ReturnsAsync(new List<User> { GetUser() });
 
             //Act
-            var result = _usercontroller.GetAllPerson().Result;
+            var result = _userController.GetAllPerson().Result;
             //Assert
-           Assert.IsType<OkObjectResult>(result.Result);
+            Assert.IsType<OkObjectResult>(result.Result);
         }
         [Fact]
         public void RegisterPerson_ReturnsOk()
@@ -57,7 +61,7 @@ namespace TestingFinalProject
             var registerUser = RegisterFakeUser();
             _repositoryStub.Setup(x => x.UserRegister(It.IsAny<UserRegistration>())).ReturnsAsync(new User());
             //Act
-            var result = _usercontroller.RegisterUser(registerUser);
+            var result = _userController.RegisterUser(registerUser);
             //Assert
             Assert.IsType<OkObjectResult>(result.Result);
         }
@@ -68,7 +72,7 @@ namespace TestingFinalProject
             var loginUser = LoginFakeUser();
             _repositoryStub.Setup(x => x.LoginUser(It.IsAny<LoginUser>())).ReturnsAsync("fake_token");
             //Act
-            var result =  _usercontroller.Login(loginUser);
+            var result = _userController.Login(loginUser);
             //Assert
             Assert.NotNull(result);
             Assert.Equal(1, result.Id);
@@ -82,19 +86,19 @@ namespace TestingFinalProject
             var fakeUser = LoginFakeUser();
 
             // Act
-            var result = await _usercontroller.Login(fakeUser);
+            var result = await _userController.Login(fakeUser);
 
             // Assert
-            Assert.IsType<UnauthorizedObjectResult>(result); 
+            Assert.IsType<UnauthorizedObjectResult>(result);
         }
         private LoginUser LoginFakeUser()
+        {
+            return new LoginUser
             {
-                return new LoginUser
-                {
-                    UserName = "tsikhish",
-                    Password = "tsikhish"
-                };
-            }
+                UserName = "tsikhish",
+                Password = "tsikhish"
+            };
+        }
         private UserRegistration RegisterFakeUser()
         {
             return new UserRegistration
@@ -121,7 +125,7 @@ namespace TestingFinalProject
                 Email = "tsikhish@gmail.com",
                 Password = "tsikhish",
                 Role = Role.Admin,
-                IsBlocked=false
+                IsBlocked = false
             };
         }
 
