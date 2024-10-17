@@ -14,6 +14,8 @@ using Microsoft.AspNetCore.Http;
 using Final.helper;
 using Microsoft.Extensions.Logging;
 using System.ComponentModel;
+using Moq;
+using System.Linq;
 
 namespace Final.Controllers
 {
@@ -23,7 +25,7 @@ namespace Final.Controllers
     {
         private readonly PersonContext _personcontext;
         private readonly ILoanService _loanService;
-        private readonly ILogger _logger;
+        private readonly ILogger<LoanController> _logger;
         public LoanController(PersonContext personcontext,ILoanService loanService,ILogger<LoanController> logger)
         {
             _personcontext = personcontext; 
@@ -33,13 +35,19 @@ namespace Final.Controllers
 
         [Authorize(Roles = "Admin")]
         [HttpPost("addloan")]
-        public async Task<ActionResult<Domain.Loan>> AddLoan(int userId, AddLoans loan)
+        public async Task<ActionResult> AddLoan(int userId, AddLoans loan)
         {
             try
             {
+                var userRoles = HttpContext.User.FindAll(ClaimTypes.Role).Select(r => r.Value).ToList();
+                if (!userRoles.Contains(Role.Admin.ToString()))
+                {
+                    _logger.LogWarning("Non-admin user attempted to add a loan.");
+                    return BadRequest("Only admin users are allowed to add loans.");
+                }
                 _logger.LogDebug($"Starting Addloan method");
                 await _loanService.AddingLoan(userId, loan);
-                _logger.LogInformation("Loan {LoanId} was added for user {UserId}", loan, userId);
+                _logger.LogInformation($"Loan was added for user {userId}", loan, userId);
                 return Ok("Added loan successfully");
             }
             catch (Exception ex)

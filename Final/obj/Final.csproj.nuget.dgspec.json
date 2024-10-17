@@ -241,6 +241,10 @@
               "target": "Package",
               "version": "[5.0.0, )"
             },
+            "Moq": {
+              "target": "Package",
+              "version": "[4.20.70, )"
+            },
             "NLog": {
               "target": "Package",
               "version": "[5.2.8, )"

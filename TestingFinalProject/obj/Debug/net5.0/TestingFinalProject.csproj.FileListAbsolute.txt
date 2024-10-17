@@ -150,7 +150,6 @@ C:\Users\Mari\source\repos\Final\TestingFinalProject\obj\Debug\net5.0\TestingFin
 C:\Users\Mari\source\repos\Final\TestingFinalProject\obj\Debug\net5.0\TestingFinalProject.genruntimeconfig.cache
 C:\Users\Mari\source\repos\Final\TestingFinalProject\obj\Debug\net5.0\ref\TestingFinalProject.dll
 C:\Users\Mari\source\repos\Final\TestingFinalProject\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.InMemory.dll
-C:\Users\Mari\source\repos\Final\TestingFinalProject\bin\Debug\net5.0\Nlog.config
 C:\Users\Mari\source\repos\Final\TestingFinalProject\bin\Debug\net5.0\NLog.dll
 C:\Users\Mari\source\repos\Final\TestingFinalProject\bin\Debug\net5.0\NLog.Extensions.Logging.dll
 C:\Users\Mari\source\repos\Final\TestingFinalProject\bin\Debug\net5.0\NLog.Web.AspNetCore.dll

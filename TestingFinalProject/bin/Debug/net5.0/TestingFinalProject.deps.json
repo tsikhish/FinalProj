@@ -1774,6 +1774,7 @@
           "Microsoft.EntityFrameworkCore": "5.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.0",
           "Microsoft.EntityFrameworkCore.Tools": "5.0.0",
+          "Moq": "4.20.70",
           "NLog": "5.2.8",
           "NLog.Extensions.Logging": "5.3.8",
           "NLog.Web.AspNetCore": "5.3.8",

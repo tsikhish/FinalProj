@@ -71,3 +71,5 @@ C:\Users\Mari\source\repos\Final\Final\bin\Debug\net5.0\NLog.dll
 C:\Users\Mari\source\repos\Final\Final\bin\Debug\net5.0\NLog.Extensions.Logging.dll
 C:\Users\Mari\source\repos\Final\Final\bin\Debug\net5.0\NLog.Web.AspNetCore.dll
 C:\Users\Mari\source\repos\Final\Final\obj\Debug\net5.0\Final.csproj.Up2Date
+C:\Users\Mari\source\repos\Final\Final\bin\Debug\net5.0\Castle.Core.dll
+C:\Users\Mari\source\repos\Final\Final\bin\Debug\net5.0\Moq.dll
