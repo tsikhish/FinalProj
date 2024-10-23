@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Security.Principal;
 
 namespace Domain
 {
@@ -17,6 +18,9 @@ namespace Domain
         public string Password { get; set; }
         public bool IsBlocked { get; set; } = false;
         public ICollection<Loan> Loans { get; set; }
+        public int FailedLoggingAttempts { get; set; } = 0;
+        public DateTime? LockoutEndTime { get; set; } 
+        public bool IsBlockedForFailedAttempts { get; set; } = false;
         [EnumDataType(typeof(Role))]
         public Role Role { get; set; }
 
