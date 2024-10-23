@@ -71,8 +71,8 @@ namespace Final.Controllers
                 }
                 else
                 {
-                    _logger.LogWarning("Invalid username or password");
-                    return Unauthorized("Invalid username or password");
+                    _logger.LogWarning(tokenstring);
+                    return BadRequest(tokenstring);
                 }
             }
             catch (Exception ex)
