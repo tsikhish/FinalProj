@@ -2,13 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Runtime.Serialization;
-using System.Text;
-using System.Threading.Tasks;
 using static Domain.Post.AddLoans;
-
 namespace Domain
 {
     public class Loan
@@ -21,9 +15,7 @@ namespace Domain
         public User User { get; set; }
         public TypeOfLoan Loantype { get; set; }
         public CurrencyType Currency { get; set; }
-
         public LoanStatus Status { get; set; }
-
-        
+        public DateTime StartDate { get; set; }
     }
 }

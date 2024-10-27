@@ -35,19 +35,26 @@ namespace Final.Controllers
 
         [Authorize(Roles = "Admin")]
         [HttpPost("addloan")]
-        public async Task<ActionResult> AddLoan(int userId, AddLoans loan)
+        public async Task<ActionResult> AddLoan(AddLoans loan)
         {
             try
             {
+
                 var userRoles = HttpContext.User.FindAll(ClaimTypes.Role).Select(r => r.Value).ToList();
                 if (!userRoles.Contains(Role.Admin.ToString()))
                 {
                     _logger.LogWarning("Non-admin user attempted to add a loan.");
                     return BadRequest("Only admin users are allowed to add loans.");
                 }
+                var userIdClaim = HttpContext.User.FindFirst(ClaimTypes.NameIdentifier);
+                if (userIdClaim == null || !int.TryParse(userIdClaim.Value, out int idOfUser))
+                {
+                    _logger.LogWarning("Unauthorized");
+                    return Unauthorized();
+                }
                 _logger.LogDebug($"Starting Addloan method");
-                await _loanService.AddingLoan(userId, loan);
-                _logger.LogInformation($"Loan was added for user {userId}", loan, userId);
+                await _loanService.AddingLoan(idOfUser, loan);
+                _logger.LogInformation($"Loan was added for user {idOfUser}", loan, idOfUser);
                 return Ok("Added loan successfully");
             }
             catch (Exception ex)
@@ -64,7 +71,7 @@ namespace Final.Controllers
         }
         [Authorize]
         [HttpPut("updateloan")]
-        public async Task<ActionResult<IEnumerable<Loan>>> UpdateLoanByUserId(int userId,int loanId, AddLoans updateLoan)
+        public async Task<ActionResult<IEnumerable<Loan>>> UpdateLoanByUserId(int loanId, AddLoans updateLoan)
         {
             try
             {
@@ -75,7 +82,7 @@ namespace Final.Controllers
                     _logger.LogWarning("Unauthorized");
                     return Unauthorized();
                 }
-                await _loanService.UpdatingLoan(HttpContext,userId, loanId, updateLoan, idOfUser);
+                await _loanService.UpdatingLoan(HttpContext, idOfUser, loanId, updateLoan);
                 _logger.LogDebug("Finished UpdateLoanByUserId method.");
                 return Ok($"{updateLoan} updated successfully");
             }
@@ -89,7 +96,6 @@ namespace Final.Controllers
                 };
                 return BadRequest(errorResponse);
             }
-
         }
         [Authorize(Roles = nameof(Role.Admin))]
         [HttpDelete("deleteloan")]
@@ -102,7 +108,6 @@ namespace Final.Controllers
                 {
                     _logger.LogWarning("Loan not found");
                     return Unauthorized($"{loanId} doesnt exists");
-
                 }
                 _logger.LogDebug("Finished DeleteLoanByUserId method.");
                 return Ok($"{loanId} successfully been deleted");
@@ -117,8 +122,46 @@ namespace Final.Controllers
                 };
                 return BadRequest(errorResponse);
             }
-
         }
-
+        [Authorize]
+        [HttpPost("Payment")]
+        public async Task<IActionResult> AddPayment(PaymentForLoan paymentForLoan)
+        {
+            try
+            {
+                var userIdClaim = HttpContext.User.FindFirst(ClaimTypes.NameIdentifier);
+                if (userIdClaim ==null || !int.TryParse(userIdClaim.Value, out int idOfUser))
+                {
+                    _logger.LogWarning("Unauthorized");
+                    return Unauthorized();
+                }
+                await _loanService.ProcessLoanPaymentAsync(HttpContext,paymentForLoan, idOfUser);
+                return Ok("Payment has added successfully");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+        [Authorize]
+        [HttpPut("UpdatePayment")]
+        public async Task<IActionResult> UpdatePayment(PaymentForLoan paymentHistory)
+        {
+            try
+            {
+                var userIdClaim = HttpContext.User.FindFirst(ClaimTypes.NameIdentifier);
+                if (userIdClaim == null || !int.TryParse(userIdClaim.Value, out int idOfUser))
+                {
+                    _logger.LogWarning("Unauthorized");
+                    return Unauthorized();
+                }
+                await _loanService.UpdateLoanPayment(HttpContext, paymentHistory, idOfUser);
+                return Ok("Payment has updated successfully");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
     }
 }
