@@ -29,7 +29,7 @@ namespace Final.Controllers
         }
 
         [HttpPost("Registration")]
-        public async Task<IActionResult> RegisterUser([FromBody] UserRegistration user)
+        public async Task<IActionResult> RegisterUser(UserRegistration user)
         {
             try
             {
@@ -55,7 +55,7 @@ namespace Final.Controllers
 
         }
         [HttpPost("login")]
-        public async Task<IActionResult> Login([FromBody] LoginUser loginModel)
+        public async Task<IActionResult> Login(LoginUser loginModel)
         {
             try
             {

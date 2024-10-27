@@ -2,6 +2,7 @@ using Data;
 using Domain;
 using Final.helper;
 using Final.Services;
+using Final.Services.ServiceHelper;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -41,7 +42,7 @@ namespace Final
 
                 if (_env.IsDevelopment())
                 {
-                    opt.EnableSensitiveDataLogging(); 
+                    opt.EnableSensitiveDataLogging();
                 }
 
                 opt.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
@@ -77,6 +78,8 @@ namespace Final
                });
             services.AddScoped<IUserServices, UserServices>();
             services.AddScoped<ILoanService, LoanService>();
+            services.AddScoped<LoanValidationService>();
+            services.AddScoped<LoanPaymentService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

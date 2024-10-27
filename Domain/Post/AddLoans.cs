@@ -4,6 +4,7 @@ namespace Domain.Post
 {
     public class AddLoans
     {
+
         [EnumDataType(typeof(TypeOfLoan))]
         [Required(ErrorMessage ="LoanType should be filled")]
         public TypeOfLoan LoanType { get; set; } = TypeOfLoan.QuickLoan;
