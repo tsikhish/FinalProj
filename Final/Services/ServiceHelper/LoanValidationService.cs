@@ -21,7 +21,7 @@ namespace Final.Services.ServiceHelper
             _logger = logger;
         }
 
-        public async Task<PaymentHistory> ValidateExistingPaymentAsync(int loanId)
+        public async Task<PaymentHistory> ValidateNonExistingPaymentAsync(int loanId)
         {
             _logger.LogInformation($"Validating existing payment for Loan ID: {loanId}"); 
             var payment = await _personContext.Payment.FirstOrDefaultAsync(x => x.LoanId == loanId);
@@ -32,7 +32,7 @@ namespace Final.Services.ServiceHelper
             }
             return payment;
         }
-        public async Task ValidateNonExistingPaymentAsync(PaymentForLoan paymentForLoan)
+        public async Task ValidateExistingPaymentAsync(PaymentForLoan paymentForLoan)
         {
             _logger.LogInformation($"Validating non-existing payment for Loan ID: {paymentForLoan.loanId}");
             var existingPayment = await _personContext.Payment

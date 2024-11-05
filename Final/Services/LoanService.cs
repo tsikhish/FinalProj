@@ -18,7 +18,7 @@ namespace Final.Services
     {
         Task AddingLoan(int idOfUser, AddLoans loan);
         Task UpdatingLoan(HttpContext httpContext, int idOfUser, int loanId, AddLoans updateLoan);
-        Task ProcessLoanPaymentAsync(HttpContext httpContext, PaymentForLoan paymentForLoan, int idOfUser);
+        Task AddingPayment(HttpContext httpContext, PaymentForLoan paymentForLoan, int idOfUser);
         Task UpdateLoanPayment(HttpContext httpContext, PaymentForLoan paymentHistory, int idOfUser);
         public class LoanService : ILoanService
         {
@@ -33,8 +33,13 @@ namespace Final.Services
             }
             public async Task AddingLoan(int idOfUser, AddLoans loan)
             {
-                var user = await  _loanValidationService.ValidateUser(idOfUser);
-                if (user.IsBlocked == true)
+                var existingUser = _personContext.AppUsers.FirstOrDefault(x => x.Id == idOfUser);
+                if (existingUser == null)
+                {
+                    _logger.LogWarning($"User not found for User ID: {idOfUser}");
+                    throw new KeyNotFoundException($"User with ID {idOfUser} not found.");
+                }
+                if (existingUser.IsBlocked == true)
                 {
                     _logger.LogWarning("User is blocked");
                     throw new Exception("Cant be added, user is Blocked");
@@ -64,9 +69,9 @@ namespace Final.Services
                     throw new UnauthorizedAccessException("You don't have the required permissions.");
                 }
             }
-            public async Task ProcessLoanPaymentAsync(HttpContext httpContext, PaymentForLoan paymentForLoan, int idOfUser)
+            public async Task AddingPayment(HttpContext httpContext, PaymentForLoan paymentForLoan, int idOfUser)
             {
-                await _loanValidationService.ValidateNonExistingPaymentAsync(paymentForLoan);
+                await _loanValidationService.ValidateExistingPaymentAsync(paymentForLoan);
                 var existingLoan = await _loanValidationService.ValidateLoanAndUserAsync(paymentForLoan, idOfUser);
                 decimal monthlyPayment = existingLoan.Ammount / existingLoan.LoanPeriod;
                 int completedMonths = LoanPaymentService.CalculateCompletedMonths(paymentForLoan.PaidAmount, monthlyPayment);
@@ -81,9 +86,9 @@ namespace Final.Services
             }
             public async Task UpdateLoanPayment(HttpContext httpContext, PaymentForLoan paymentHistory, int idOfUser)
             {
-                var existingPayment = await _loanValidationService.ValidateExistingPaymentAsync(paymentHistory.loanId);
+                var existingPayment =await  _loanValidationService.ValidateNonExistingPaymentAsync(idOfUser);
                 await _loanValidationService.ValidateLoanAndUserAsync(paymentHistory, idOfUser);
-                bool isUserBlocked = ShouldBlockUser(existingPayment);
+                bool isUserBlocked =  ShouldBlockUser(existingPayment);
                 int completedMonths = LoanPaymentService.CalculateCompletedMonths(paymentHistory.PaidAmount, existingPayment.MonthlyPayment);
                 var remainPaymentForMonth = existingPayment.RemainMonthlyPayment + paymentHistory.PaidAmount - existingPayment.MonthlyPayment;
                 await UpdateToDB(isUserBlocked,existingPayment, remainPaymentForMonth, paymentHistory, completedMonths);

@@ -9,12 +9,9 @@ using Final.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authorization;
 using System.Security.Claims;
-using static Domain.Post.AddLoans;
 using Microsoft.AspNetCore.Http;
 using Final.helper;
 using Microsoft.Extensions.Logging;
-using System.ComponentModel;
-using Moq;
 using System.Linq;
 
 namespace Final.Controllers
@@ -104,7 +101,7 @@ namespace Final.Controllers
             try
             {
                 _logger.LogDebug("Started DeleteLoanByUserId method.");
-                if (_personcontext.Loans.FirstOrDefaultAsync(x => x.Id == loanId) == null)
+                if (await _personcontext.Loans.FirstOrDefaultAsync(x => x.Id == loanId) == null)
                 {
                     _logger.LogWarning("Loan not found");
                     return Unauthorized($"{loanId} doesnt exists");
@@ -129,17 +126,20 @@ namespace Final.Controllers
         {
             try
             {
+                _logger.LogDebug("Started AddPayment method.");
                 var userIdClaim = HttpContext.User.FindFirst(ClaimTypes.NameIdentifier);
                 if (userIdClaim ==null || !int.TryParse(userIdClaim.Value, out int idOfUser))
                 {
                     _logger.LogWarning("Unauthorized");
                     return Unauthorized();
                 }
-                await _loanService.ProcessLoanPaymentAsync(HttpContext,paymentForLoan, idOfUser);
+                await _loanService.AddingPayment(HttpContext,paymentForLoan, idOfUser);
+                _logger.LogDebug("Finished AddPayment method.");
                 return Ok("Payment has added successfully");
             }
             catch (Exception ex)
             {
+                _logger.LogError(ex, $"An error occurred during adding payment.");
                 return BadRequest(ex.Message);
             }
         }
@@ -149,6 +149,8 @@ namespace Final.Controllers
         {
             try
             {
+                _logger.LogDebug("Started UpdatePayment method.");
+
                 var userIdClaim = HttpContext.User.FindFirst(ClaimTypes.NameIdentifier);
                 if (userIdClaim == null || !int.TryParse(userIdClaim.Value, out int idOfUser))
                 {
@@ -156,10 +158,12 @@ namespace Final.Controllers
                     return Unauthorized();
                 }
                 await _loanService.UpdateLoanPayment(HttpContext, paymentHistory, idOfUser);
+                _logger.LogDebug("Finished UpdatePayment method.");
                 return Ok("Payment has updated successfully");
             }
             catch (Exception ex)
             {
+                _logger.LogError(ex, $"An error occurred during payment update.");
                 return BadRequest(ex.Message);
             }
         }

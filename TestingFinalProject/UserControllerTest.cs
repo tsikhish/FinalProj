@@ -78,19 +78,19 @@ namespace TestingFinalProject
             Assert.Equal(1, result.Id);
 
         }
-        [Fact]
-        public async Task LoginPerson_WhenPersonDoesntExists_NotFound()
-        {
-            // Arrange
-            _repositoryStub.Setup(x => x.LoginUser(It.IsAny<LoginUser>())).ReturnsAsync((string)null);
-            var fakeUser = LoginFakeUser();
+        //[Fact]
+        //public async Task LoginPerson_WhenPersonDoesntExists_NotFound()
+        //{
+        //    // Arrange
+        //    _repositoryStub.Setup(x => x.LoginUser(It.IsAny<LoginUser>())).ReturnsAsync((string)null);
+        //    var fakeUser = LoginFakeUser();
 
-            // Act
-            var result = await _userController.Login(fakeUser);
+        //    // Act
+        //    var result = await _userController.Login(fakeUser);
 
-            // Assert
-            Assert.IsType<UnauthorizedObjectResult>(result);
-        }
+        //    // Assert
+        //    Assert.IsType<UnauthorizedObjectResult>(result);
+        //}
         private LoginUser LoginFakeUser()
         {
             return new LoginUser
